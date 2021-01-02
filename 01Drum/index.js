@@ -1,4 +1,3 @@
-window.addEventListener('keydown',playSound)
 
   function playSound(e){
 
@@ -12,7 +11,22 @@ window.addEventListener('keydown',playSound)
   }
   catch {
     alert('You hit the wrong key')
+    }
   }
 
-  }
+  function removeTransation(e){
+    try{
+      if(e.propertyName == !'transform') throw new Error()
+      this.classList.remove('playing')
+    }
+    catch(err){
+      alert(err)
+    }
+   }
+
+  const keys = document.querySelectorAll('.key')
+  keys.forEach(key => key.addEventListener('transitionend', removeTransation))
+
+  window.addEventListener('keydown',playSound)
+
   
