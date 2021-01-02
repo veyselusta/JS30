@@ -1,4 +1,7 @@
-window.addEventListener('keydown',function(e){
+window.addEventListener('keydown',playSound)
+
+  function playSound(e){
+
   const audio = document.querySelector(`audio[data-key="${e.key}"]`)
   const key = document.querySelector(`div[data-key="${e.key}"]`)
 
@@ -8,7 +11,8 @@ window.addEventListener('keydown',function(e){
     key.classList.add('playing')
   }
   catch {
-    alert('You hit wrong key')
+    alert('You hit the wrong key')
   }
 
-})
+  }
+  
